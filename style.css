@@ -33,9 +33,16 @@ img{
     margin-left: 50px;
 }
 #notification{
+    display: inline-block;
 	height: 200px;
     width: 350px;
     align-self: top;
-    margin-left: 700px;
+    margin-left: 50px;
     margin-top: 50px;   
+}
+
+.wizard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
