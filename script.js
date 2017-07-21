@@ -8,7 +8,7 @@ $(document).ready(function() {
 		if (result === 1) {
 	 notification=("You win");
 	 playerScore= playerScore + 1;
-	} else if (result === 2) {
+	} else if (result === 2) {	
 		notification=("You Lose");
 	 computerScore= computerScore + 1;
 
