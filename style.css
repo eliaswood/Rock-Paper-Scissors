@@ -1,8 +1,14 @@
 button {
  background-color: grey;
    cursor: pointer;
-    height: 50px;
-    width: 75px;
+    height: 100px;
+    width: 150px;
+    align-self: center;
+    margin-left: 175px;
+    margin-top: 25px;   
+    color: white;   
+    font-size:14px;
+    font-weight:700;
 }
 
 
@@ -11,6 +17,25 @@ button {
 
 }
 h1{
- border-style: solid;
- display:inline-block;
+ 	border-style: solid;
+ 	display:inline-block;
+ 	align-self: center;
+  	margin-left: 425px;
+    margin-top: 5px;   
+     
+}
+body{
+	background-color: #996633;
+}
+img{
+	height: 500px;
+    width: 500px;
+    margin-left: 50px;
+}
+#notification{
+	height: 200px;
+    width: 350px;
+    align-self: top;
+    margin-left: 700px;
+    margin-top: 50px;   
 }
