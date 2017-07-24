@@ -1,15 +1,19 @@
-button: #Reset{
-    display: inline-flex;
+ #reset{
+    display: inline;
+    height: 50px;
+    width: 75px;
     align-self: right;
 
+
+
 }
-button {
+#Rock, #Paper, #Scissors {
  background-color: grey;
    cursor: pointer;
    display:inline;
     height: 100px;
     width: 150px;
-    align-self: left;
+    align-self: center;
     margin-left: 100px;
     margin-top: 25px;   
     color: white;   
@@ -22,7 +26,6 @@ button {
     font-size: 35px;
     margin-left: 250px;
     margin-top: 50px;
-
 }
 
 

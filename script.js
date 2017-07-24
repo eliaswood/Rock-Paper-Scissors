@@ -4,6 +4,7 @@ $(document).ready(function() {
 	var notification= null
 	var notificationTimer= null
 	scoreBoard();
+	
 
 	function result(wizard, player){
 		var result = (3 + player - wizard) % 3;
@@ -16,15 +17,15 @@ $(document).ready(function() {
 	} else {
 	 	countDown3();
 		}
-		scoreBoard();
-}
+		countDownScore();
+	}
 	function countDown(){
 		var rockTime= setTimeout(function(){countDownNotification1()}, 250);
 		var paperTime= setTimeout(function(){countDownNotification2()}, 750);
 		var scissorsTime= setTimeout(function(){countDownNotification3()}, 1250);
 		var shootTime= setTimeout(function(){countDownNotification4()}, 1750);
 		$("#notificationTimer").html(notificationTimer);	
-		}
+	}
 	function countDown1(){
 		var notification1=setTimeout(function(){countDownNotification5()}, 1750);
 		$("#notification").html(notification);
@@ -36,6 +37,11 @@ $(document).ready(function() {
 	function countDown3(){
 		var notification3=setTimeout(function(){countDownNotification7()}, 1750);
 		$("#notification").html(notification);
+	}
+	function countDownScore(){
+		var sBT=setTimeout(function(){result()}, 1750);
+		$("#Player").html(playerScore);
+	 	$("#Computer").html(computerScore);
 	}
 	function countDownNotification1(){
 			notificationTimer=("Rock")
@@ -65,6 +71,14 @@ $(document).ready(function() {
 			notification=("You Tied!")
 			$("#notification").html(notification);
 	}
+	function scoreBoardTime(){
+			("Score: You " + playerScore + "-" + computerScore + " Computer");
+			$("#Player").html(playerScore);
+	 		$("#Computer").html(computerScore);
+
+	}
+
+	
 
 	function play(x) {
 		var y = wizard();
@@ -76,17 +90,20 @@ $(document).ready(function() {
 	$("#Rock").click(function() {
 		play(1);
 		countDown();
+		countDownScore();
 
 	});
 
 	$("#Paper").click(function() {
 		play(2);
 		countDown();
+		countDownScore();
 	});
 
 	$("#Scissors").click(function() {
 		play(3) ;
 		countDown();
+		countDownScore();
 	});
 
 	function wizard(){
@@ -95,7 +112,6 @@ $(document).ready(function() {
 	}
 
 	function scoreBoard(){
-		console.log("Score: You " + playerScore + "-" + computerScore + " Computer");
 		$("#Player").html(playerScore);
 	 	$("#Computer").html(computerScore);
 		$("#notification").html(notification);
