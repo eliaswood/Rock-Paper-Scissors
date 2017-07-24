@@ -9,14 +9,15 @@ $(document).ready(function() {
 		var result = (3 + player - wizard) % 3;
 		if (result === 1) {
 	 	playerScore= playerScore + 1;
-	 	notification=setTimeout(function(){countDownNotification5()}, 1750);
-	} else if (result === 2) {	
+	 	countDown1();
+	 } else if (result === 2) {	
 		computerScore= computerScore + 1;
-		notification=setTimeout(function(){countDownNotification6()}, 1750);
+		countDown2();
 	} else {
-	 notification=setTimeout(function(){countDownNotification7()}, 1750);
-	scoreBoard();
-	}}
+	 	countDown3();
+		}
+		scoreBoard();
+}
 	function countDown(){
 		var rockTime= setTimeout(function(){countDownNotification1()}, 250);
 		var paperTime= setTimeout(function(){countDownNotification2()}, 750);
@@ -24,6 +25,18 @@ $(document).ready(function() {
 		var shootTime= setTimeout(function(){countDownNotification4()}, 1750);
 		$("#notificationTimer").html(notificationTimer);	
 		}
+	function countDown1(){
+		var notification1=setTimeout(function(){countDownNotification5()}, 1750);
+		$("#notification").html(notification);
+	}
+	function countDown2(){
+		var notification2=setTimeout(function(){countDownNotification6()}, 1750);
+		$("#notification").html(notification);
+	}
+	function countDown3(){
+		var notification3=setTimeout(function(){countDownNotification7()}, 1750);
+		$("#notification").html(notification);
+	}
 	function countDownNotification1(){
 			notificationTimer=("Rock")
 			$("#notificationTimer").html(notificationTimer);
@@ -37,19 +50,19 @@ $(document).ready(function() {
 			$("#notificationTimer").html(notificationTimer);
 	}
 	function countDownNotification4(){
-			notification=("Shoot!")
+			notificationTimer=("Shoot!")
 			$("#notificationTimer").html(notificationTimer);
 	}
 	function countDownNotification5(){
-			notificationTimer=("You Win!")
+			notification=("You Win!")
 			$("#notification").html(notification);
 	}
 	function countDownNotification6(){
-			notificationTimer=("You Lose!")
+			notification=("You Lose!")
 			$("#notification").html(notification);
 	}
 	function countDownNotification7(){
-			notificationTimer=("You Tied!")
+			notification=("You Tied!")
 			$("#notification").html(notification);
 	}
 
@@ -86,6 +99,7 @@ $(document).ready(function() {
 		$("#Player").html(playerScore);
 	 	$("#Computer").html(computerScore);
 		$("#notification").html(notification);
+		$("#notificationTimer").html(notificationTimer);
 		localStorage.setItem("wScore", computerScore) ;
 		localStorage.setItem("pScore", playerScore) ;
 };
@@ -95,7 +109,7 @@ $(document).ready(function() {
 			playerScore= 0
 			localStorage.setItem("pScore", playerScore);
 			notification= null;
-			scoreBoard();
 			notificationTimer=null;
+			scoreBoard();
 		})
 });
