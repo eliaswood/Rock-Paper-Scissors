@@ -92,6 +92,15 @@ $(document).ready(function() {
 	}
 	function disable(){
     $("#Reset").attr("disabled",true);
+    $("#Rock").attr("disabled",true);
+    $("#Paper").attr("disabled",true);
+    $("#Scissors").attr("disabled",true);
+	}
+	function enable(){
+    $("#Reset").attr("disabled",false);
+    $("#Rock").attr("disabled",false);
+    $("#Paper").attr("disabled",false);
+    $("#Scissors").attr("disabled",false);
 	}
   /* Here we are initializing the variables. We are pulling
   the scores out of localStorage and setting everything else
@@ -141,7 +150,7 @@ $(document).ready(function() {
 				}, 500);
 			}, 500);
 		}, 500);
-		disable ("disable", true)
+		disable ("disable", true);
 		// TODO: there's a better way to write this than 4 nested setTimeout's
 	}
 
@@ -178,7 +187,7 @@ $(document).ready(function() {
 				// ...only set notification to 'You Tied!', do not update score
 				updateNotification('You Tied!');
 			}
-			disable ("disable", false);
+			enable("disabled", false);
 		});
 		
 	};
@@ -186,17 +195,19 @@ $(document).ready(function() {
 	$("#Rock").click(function() {
 		// When rock button is clicked, call play with playerScore = 1
 		play(1);
-		
+	
 		});
 
 	$("#Paper").click(function() {
 		// When rock button is clicked, call play with playerScore = 2
 		play(2);
+		
 	});
 
 	$("#Scissors").click(function() {
 		// When rock button is clicked, call play with playerScore = 3
 		play(3);
+	
 	});
 
 	$("#Reset").click(function() {
