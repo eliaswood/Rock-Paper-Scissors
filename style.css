@@ -11,10 +11,10 @@
  background-color: grey;
    cursor: pointer;
    display:inline;
-    height: 100px;
-    width: 150px;
+    height: 80px;
+    width: 130px;
     align-self: center;
-    margin-left: 100px;
+    margin-left: 50px;
     margin-top: 25px;   
     color: white;   
     font-size:14px;
@@ -30,7 +30,7 @@
 
 
 
- button:hover  { 
+ #Rock, #Paper, #Scissors, #Lizard, #Spock button: hover   { 
  background-color: #33F9FF;
 
 }

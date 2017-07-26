@@ -15,7 +15,7 @@ $(document).ready(function() {
 	function getComputerMove(){
 		/* This function returns 1, 2, or 3 randomly */
 		return Math.floor(
-			(Math.random() * 3) + 1
+			(Math.random() * 5) + 1
 		);
 	}
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
 		0 means a tie.
 		1 means the player won.
 		2 means the computer won. */
-		return (3 + playerMove - computerMove) % 3;
+		return (5 + playerMove - computerMove) % 5;
 	}
 
 	function getResult(playerMove) {
@@ -95,12 +95,16 @@ $(document).ready(function() {
     $("#Rock").attr("disabled",true);
     $("#Paper").attr("disabled",true);
     $("#Scissors").attr("disabled",true);
+    $("#Lizard").attr("disabled",true);
+    $("#Spock").attr("disabled",true);
 	}
 	function enable(){
     $("#Reset").attr("disabled",false);
     $("#Rock").attr("disabled",false);
     $("#Paper").attr("disabled",false);
     $("#Scissors").attr("disabled",false);
+    $("#Lizard").attr("disabled",false);
+    $("#Spock").attr("disabled",false);
 	}
   /* Here we are initializing the variables. We are pulling
   the scores out of localStorage and setting everything else
@@ -144,12 +148,19 @@ $(document).ready(function() {
 				setTimeout(function() {
 
 					// then set timerMessage to 'Shoot!'
-					updateTimerMessage('Shoot!');
+					updateTimerMessage('Lizard...');
 					// then, immediately invoke cb.
-					cb();
+						setTimeout(function() {
+							updateTimerMessage('Spock...')
+								setTimeout(function(){
+									updateTimerMessage('Shoot!...')
+											cb();
+						}, 500);
+					}, 500);
 				}, 500);
 			}, 500);
 		}, 500);
+
 		disable ("disable", true);
 		// TODO: there's a better way to write this than 4 nested setTimeout's
 	}
@@ -171,12 +182,12 @@ $(document).ready(function() {
 			// This will happen after the count down animation is over.
 
 			// if the player won the game...
-			if (result === 1) {
+			if (result === 2, 4) {
 				// ...update score so that player score is increased by one
 				updateScore(playerScore + 1, computerScore);
 				// ...set notification to 'You Win!'
 				updateNotification('You Win!');
-			} else if (result === 2) {
+			} else if (result === 1, 3) {
 				// if the computer won the game...
 				// ...update score so that computer score is increased by one
 				updateScore(playerScore, computerScore + 1);
@@ -206,9 +217,25 @@ $(document).ready(function() {
 
 	$("#Scissors").click(function() {
 		// When rock button is clicked, call play with playerScore = 3
-		play(3);
+		play(3)
 	
 	});
+	$("#Scissors").click(function() {
+		// When rock button is clicked, call play with playerScore = 3
+		play(3)
+	
+	});
+	$("#Lizard").click(function() {
+		// When rock button is clicked, call play with playerScore = 3
+		play(4)
+	
+	});
+	$("#Spock").click(function() {
+		// When rock button is clicked, call play with playerScore = 3
+		play(5)
+	
+	});
+
 
 	$("#Reset").click(function() {
 		// When reset button is clicked...
