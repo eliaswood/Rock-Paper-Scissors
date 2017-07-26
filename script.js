@@ -12,7 +12,6 @@ $(document).ready(function() {
 	var computerScore;
 	var notification;
 	var timerMessage;
-	var resetDisable= $("#Reset").click(function(){}).disabled= true; 
 	function getComputerMove(){
 		/* This function returns 1, 2, or 3 randomly */
 		return Math.floor(
@@ -91,7 +90,9 @@ $(document).ready(function() {
 		timerMessage = newTimerMessage;
 		$("#notificationTimer").html(timerMessage);
 	}
-
+	function disable(){
+    $("#Reset").attr("disabled",true);
+	}
   /* Here we are initializing the variables. We are pulling
   the scores out of localStorage and setting everything else
   to null */
@@ -140,8 +141,7 @@ $(document).ready(function() {
 				}, 500);
 			}, 500);
 		}, 500);
-		resetDisable= true;
-
+		disable ("disable", true)
 		// TODO: there's a better way to write this than 4 nested setTimeout's
 	}
 
@@ -178,9 +178,9 @@ $(document).ready(function() {
 				// ...only set notification to 'You Tied!', do not update score
 				updateNotification('You Tied!');
 			}
-
+			disable ("disable", false);
 		});
-		resetDisable=false;
+		
 	};
 
 	$("#Rock").click(function() {
