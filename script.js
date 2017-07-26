@@ -182,12 +182,12 @@ $(document).ready(function() {
 			// This will happen after the count down animation is over.
 
 			// if the player won the game...
-			if (result === 2, 4) {
+			if (result === 2) || (result === 4){
 				// ...update score so that player score is increased by one
 				updateScore(playerScore + 1, computerScore);
 				// ...set notification to 'You Win!'
 				updateNotification('You Win!');
-			} else if (result === 1, 3) {
+			} else if (result === 1) || (result === 3){
 				// if the computer won the game...
 				// ...update score so that computer score is increased by one
 				updateScore(playerScore, computerScore + 1);
