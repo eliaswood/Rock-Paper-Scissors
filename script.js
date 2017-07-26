@@ -12,7 +12,7 @@ $(document).ready(function() {
 	var computerScore;
 	var notification;
 	var timerMessage;
-
+	var resetDisable= $("#Reset").click(function(){}).disabled= true; 
 	function getComputerMove(){
 		/* This function returns 1, 2, or 3 randomly */
 		return Math.floor(
@@ -140,6 +140,7 @@ $(document).ready(function() {
 				}, 500);
 			}, 500);
 		}, 500);
+		resetDisable= true;
 
 		// TODO: there's a better way to write this than 4 nested setTimeout's
 	}
@@ -177,13 +178,16 @@ $(document).ready(function() {
 				// ...only set notification to 'You Tied!', do not update score
 				updateNotification('You Tied!');
 			}
+
 		});
+		resetDisable=false;
 	};
 
 	$("#Rock").click(function() {
 		// When rock button is clicked, call play with playerScore = 1
 		play(1);
-	});
+		
+		});
 
 	$("#Paper").click(function() {
 		// When rock button is clicked, call play with playerScore = 2
@@ -198,10 +202,12 @@ $(document).ready(function() {
 	$("#Reset").click(function() {
 		// When reset button is clicked...
 		// ...update score to 0 - 0
+		console.log("I was clicked");
 		updateScore(0, 0);
 		// ...update notification to null
 		updateNotification(null);
 		// ...update notification to null
 		updateTimerMessage(null);
+
 	});
 });
