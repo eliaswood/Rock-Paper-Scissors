@@ -207,8 +207,10 @@ $(document).ready(function() {
 	function updateChoices(playerChoice, computerChoice){
 		$('#computerChoice').html(computerChoice);
 		$('#playerChoice').html(playerChoice);
-		map[playerMove].image;
-		map[computerMove].image;
+		console.log(map);
+		console.log(playerChoice);
+		map[playerChoice].image;
+		map[computerChoice].image;
 		
 	}
 	var map = {
