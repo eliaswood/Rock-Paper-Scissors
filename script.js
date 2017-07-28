@@ -198,8 +198,8 @@ $(document).ready(function() {
 				// ...only set notification to 'You Tied!', do not update score
 				updateNotification('You Tied!');
 			}
-			updateChoices(playerChoice, computerChoice);
 			enable("disabled", false);
+			updateChoices(playerChoice, computerChoice);
 
 		});
 		
@@ -207,15 +207,15 @@ $(document).ready(function() {
 	function updateChoices(playerChoice, computerChoice){
 		$('#computerChoice').html(computerChoice);
 		$('#playerChoice').html(playerChoice);
-		map['number'];
+		map[playerMove].image;
 		
 	}
 	var map = {
-		'1': {'rock', image: 'rock.png'},
-		'2': {'Paper', image: 'paper.png'},
-		'3': {'Scissors',image: 'scissors.png'},
-		'4': {'Lizard', image: 'lizard.jpg'},
-		'5': {'Spock', image: 'how-to-draw-spock.gif'},
+		'1': {name:'rock', image: 'rock.png'},
+		'2': {name:'Paper', image: 'paper.png'},
+		'3': {name:'Scissors', image: 'scissors.png'},
+		'4': {name:'Lizard', image: 'lizard.jpg'},
+		'5': {name:'Spock', image: 'how-to-draw-spock.gif'},
 	}
 
 
