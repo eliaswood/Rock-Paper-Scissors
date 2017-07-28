@@ -208,14 +208,15 @@ $(document).ready(function() {
 		$('#computerChoice').html(computerChoice);
 		$('#playerChoice').html(playerChoice);
 		map[playerMove].image;
+		map[computerMove].image;
 		
 	}
 	var map = {
-		'1': {name:'rock', image: 'rock.png'},
-		'2': {name:'Paper', image: 'paper.png'},
-		'3': {name:'Scissors', image: 'scissors.png'},
-		'4': {name:'Lizard', image: 'lizard.jpg'},
-		'5': {name:'Spock', image: 'how-to-draw-spock.gif'},
+		'1': {name:'rock', image: 'image/rock.png'},
+		'2': {name:'Paper', image: 'image/paper.png'},
+		'3': {name:'Scissors', image: 'image/scissors.png'},
+		'4': {name:'Lizard', image: 'image/lizard.jpg'},
+		'5': {name:'Spock', image: 'image/how-to-draw-spock.gif'},
 	}
 
 
