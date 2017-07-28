@@ -150,11 +150,11 @@ $(document).ready(function() {
 					// then set timerMessage to 'Shoot!'
 					updateTimerMessage('Lizard...');
 					// then, immediately invoke cb.
-						setTimeout(function() {
-							updateTimerMessage('Spock...')
-								setTimeout(function(){
-									updateTimerMessage('Shoot!...')
-											cb();
+					setTimeout(function() {
+						updateTimerMessage('Spock...')
+						setTimeout(function(){
+							updateTimerMessage('Shoot!...')
+							cb();
 						}, 500);
 					}, 500);
 				}, 500);
@@ -198,16 +198,32 @@ $(document).ready(function() {
 				// ...only set notification to 'You Tied!', do not update score
 				updateNotification('You Tied!');
 			}
+			updateChoices(playerChoice, computerChoice);
 			enable("disabled", false);
+
 		});
 		
 	};
+	function updateChoices(playerChoice, computerChoice){
+		$('#computerChoice').html(computerChoice);
+		$('#playerChoice').html(playerChoice);
+		map['number'];
+		
+	}
+	var map = {
+		'1': {'rock', image: 'rock.png'},
+		'2': {'Paper', image: 'paper.png'},
+		'3': {'Scissors',image: 'scissors.png'},
+		'4': {'Lizard', image: 'lizard.jpg'},
+		'5': {'Spock', image: 'how-to-draw-spock.gif'},
+	}
+
 
 	$("#Rock").click(function() {
 		// When rock button is clicked, call play with playerScore = 1
 		play(1);
 	
-		});
+	});
 
 	$("#Paper").click(function() {
 		// When rock button is clicked, call play with playerScore = 2
@@ -220,16 +236,19 @@ $(document).ready(function() {
 		play(3)
 	
 	});
+
 	$("#Scissors").click(function() {
 		// When rock button is clicked, call play with playerScore = 3
 		play(3)
 	
 	});
+
 	$("#Lizard").click(function() {
 		// When rock button is clicked, call play with playerScore = 3
 		play(4)
 	
 	});
+
 	$("#Spock").click(function() {
 		// When rock button is clicked, call play with playerScore = 3
 		play(5)
