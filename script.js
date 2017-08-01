@@ -30,16 +30,6 @@ $(document).ready(function() {
 		return (5 + playerMove - computerMove) % 5;
 	}
 
-	function getResult(playerMove) {
-		/* Given a playerMove (an interger 1 - 3),
-		retrieves the computers move and calculates
-		the result. */
-		return calculateResult(
-			playerMove,
-			getComputerMove()
-		);
-	}
-
 	function updateScoreboardHTML() {
 		/* Makes sure the scoreboard html is up
 		to date with the values stored in the playerScore
@@ -173,7 +163,12 @@ $(document).ready(function() {
 		// Immediately, set notification to null
 		updateNotification(null);
 		// Calculate the result.
-		var result = getResult(playerMove);
+		updateChoices(null, null);
+		var computerMove= getComputerMove();
+		var result = calculateResult(
+			playerMove,
+			computerMove
+		);
 
 		/* Begin count down animation. Notice everything in
 		the function() { ... part is a callback. I.e., it
@@ -199,26 +194,29 @@ $(document).ready(function() {
 				updateNotification('You Tied!');
 			}
 			enable("disabled", false);
-			updateChoices(playerChoice, computerChoice);
+			updateChoices(playerMove, computerMove);
 
 		});
 		
 	};
-	function updateChoices(playerChoice, computerChoice){
-		$('#computerChoice').html(computerChoice);
-		$('#playerChoice').html(playerChoice);
-		console.log(map);
-		console.log(playerChoice);
-		map[playerChoice].image;
-		map[computerChoice].image;
-		
+	function updateChoices(playerMove, computerMove){
+		if (playerMove !== null && computerMove !== null) {
+			var playerChoiceName= map [playerMove].image;
+			var computerChoiceName= map [computerMove].image;
+			
+			$('#computerChoice').html('<img src="' + computerChoiceName + '" />');
+			$('#playerChoice').html('<img src="' + playerChoiceName + '" />');
+		} else {
+			$('#computerChoice').html(null);
+			$('#playerChoice').html(null);
+		}		
 	}
 	var map = {
-		'1': {name:'rock', image: 'image/rock.png'},
-		'2': {name:'Paper', image: 'image/paper.png'},
-		'3': {name:'Scissors', image: 'image/scissors.png'},
-		'4': {name:'Lizard', image: 'image/lizard.jpg'},
-		'5': {name:'Spock', image: 'image/how-to-draw-spock.gif'},
+		'1': {name:'rock', image: 'images/rock.png'},
+		'2': {name:'Paper', image: 'images/paper.png'},
+		'3': {name:'Scissors', image: 'images/scizzors.png'},
+		'4': {name:'Lizard', image: 'images/lizard.jpg'},
+		'5': {name:'Spock', image: 'images/how-to-draw-spock.gif'},
 	}
 
 
@@ -268,6 +266,6 @@ $(document).ready(function() {
 		updateNotification(null);
 		// ...update notification to null
 		updateTimerMessage(null);
-
+		updateChoices(null,null);
 	});
 });
