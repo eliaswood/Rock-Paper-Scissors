@@ -27,7 +27,7 @@ $(document).ready(function() {
 		0 means a tie.
 		1 means the player won.
 		2 means the computer won. */
-		return (5 + playerMove - computerMove) % 5;
+		return (5 + computerMove - playerMove) % 5;
 	}
 
 	function updateScoreboardHTML() {
@@ -215,8 +215,8 @@ $(document).ready(function() {
 		'1': {name:'rock', image: 'images/rock.png'},
 		'2': {name:'Paper', image: 'images/paper.png'},
 		'3': {name:'Scissors', image: 'images/scizzors.png'},
-		'4': {name:'Lizard', image: 'images/lizard.jpg'},
-		'5': {name:'Spock', image: 'images/how-to-draw-spock.gif'},
+		'5': {name:'Lizard', image: 'images/lizard.jpg'},
+		'4': {name:'Spock', image: 'images/how-to-draw-spock.gif'},
 	}
 
 
@@ -238,21 +238,15 @@ $(document).ready(function() {
 	
 	});
 
-	$("#Scissors").click(function() {
-		// When rock button is clicked, call play with playerScore = 3
-		play(3)
-	
-	});
-
 	$("#Lizard").click(function() {
 		// When rock button is clicked, call play with playerScore = 3
-		play(4)
+		play(5)
 	
 	});
 
 	$("#Spock").click(function() {
 		// When rock button is clicked, call play with playerScore = 3
-		play(5)
+		play(4)
 	
 	});
 
