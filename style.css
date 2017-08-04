@@ -43,7 +43,7 @@ h1{
      
 }
 body{
-	background-color: #996633;
+	background-color: #000099;
 }
 img{
 	height: 450px;
@@ -63,6 +63,12 @@ img{
 
 .wizard-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: none;
+}
+.square1 {
+    height: 300px;
+    width: 200px;
+
 }
