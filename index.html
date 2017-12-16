@@ -13,25 +13,33 @@
 		<button id="Reset">Reset</button>
 		<h2 id= "notificationTimer"></h2>
 <div>
-	<div class="wizard-container">
-		<img src= "images/wizard.png" alt="Wizard">
-		<img src= "images/square.png" alt="square" class= sqaure1>
-		<img src= "images/square.png" alt="square" class= square2>
-		<img src= "images/guy.png" alt="guy">
+	<div class="game-container">
+		<div class="inner-game-container avatar-container">
+			<img src= "images/wizard.png" alt="Wizard">
+		</div>
+		<div id="player-choice-container" class="inner-game-container choice-container">
+			<img src= "images/square.png" alt="square" class= sqaure1>
+			<div id="player-choice" class="choice"></div>
+		</div>
+		<div id="computer-choice-container" class="inner-game-container choice-container">
+			<img src= "images/square.png" alt="square" class= square2>
+			<div id="computer-choice" class="choice"></div>
+		</div>
+		<div class="inner-game-container avatar-container">
+			<img src= "images/guy.png" alt="guy">
+		</div>
 	</div>
 </div>
 
 		<p id="notification"></p>
-		<div id= "computerChoice"> </div>
-		<div id= "playerChoice"></div>
 </div>
 
 	<div>
-		<button id="Rock"><img src= "images/rock.png" alt="Rock"></button>
-		<button id="Paper">Paper</button>
-		<button id="Scissors">Scissors</button>
-		<button id="Lizard">Lizard</button>
-		<button id="Spock">Spock</button>
+		<button id="Rock" class="play-button"><img src= "images/rock.png" alt="Rock"></button>
+		<button id="Paper" class="play-button"><img src= "images/paper.png" alt="Paper"></button>
+		<button id="Scissors" class="play-button"><img src= "images/scizzors.png" alt="Scissors"></button>
+		<button id="Lizard" class="play-button"><img src= "images/lizard.jpg" alt="lizard"></button>
+		<button id="Spock" class="play-button"><img src= "images/how-to-draw-spock.gif" alt="Spock"></button>
 	</div>
 		
 </body>

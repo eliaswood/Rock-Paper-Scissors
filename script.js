@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
 	/* Here we declare the variables we are going to use.
 	Since we are just writing it as 'var x;', the
 	variables will be initialized to undefined. This might
@@ -204,11 +204,11 @@ $(document).ready(function() {
 			var playerChoiceName= map [playerMove].image;
 			var computerChoiceName= map [computerMove].image;
 			
-			$('#computerChoice').html('<img src="' + computerChoiceName + '" />');
-			$('#playerChoice').html('<img src="' + playerChoiceName + '" />');
+			$('#computer-choice').html('<img src="' + computerChoiceName + '" />');
+			$('#player-choice').html('<img src="' + playerChoiceName + '" />');
 		} else {
-			$('#computerChoice').html(null);
-			$('#playerChoice').html(null);
+			$('#computer-choice').html(null);
+			$('#player-choice').html(null);
 		}		
 	}
 	var map = {
@@ -262,4 +262,4 @@ $(document).ready(function() {
 		updateTimerMessage(null);
 		updateChoices(null,null);
 	});
-});
+});	
